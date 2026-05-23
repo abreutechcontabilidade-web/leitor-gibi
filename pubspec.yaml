@@ -1,0 +1,22 @@
+name: leitor_de_gibi
+description: Aplicativo de leitura de gibi para idosos com Text-to-Speech em português.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Text-to-Speech com suporte a pt-BR, Android e Flutter Web
+  flutter_tts: ^4.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
