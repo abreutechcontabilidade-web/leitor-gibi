@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'widgets/luma_botao.dart';
+// NOVA FEATURE: Implementar um sistema de autenticação e gerenciamento de usuários para personalização e segurança.
 
 void main() {
   runApp(const LeitorDeGibiApp());
