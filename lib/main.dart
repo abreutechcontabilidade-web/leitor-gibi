@@ -1,4 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+class LumaStatus extends ChangeNotifier {
+  bool _lumaAtivo = true;
+
+  bool get lumaAtivo => _lumaAtivo;
+
+  void alternarLuma() {
+    _lumaAtivo = !_lumaAtivo;
+    notifyListeners();
+  }
+}
 import 'package:flutter_tts/flutter_tts.dart';
 import 'widgets/luma_botao.dart';
 // NOVA FEATURE: Criar um leitor de histórias em quadrinhos com navegação entre páginas e zoom nas imagens.
