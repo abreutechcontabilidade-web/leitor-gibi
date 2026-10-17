@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
+import 'widgets/luma_botao.dart';
 
 void main() {
   runApp(const LeitorDeGibiApp());
@@ -100,6 +101,8 @@ class _LeitorScreenState extends State<LeitorScreen> {
           padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
+const LumaBotao(),
+              SizedBox(height: 16),
             children: [
               // ── Título Principal ──────────────────────────────────────────
               const Text(

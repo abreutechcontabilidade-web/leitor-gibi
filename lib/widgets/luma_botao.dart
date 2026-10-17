@@ -6,9 +6,6 @@ class LumaBotao extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.blue,
-      ),
       onPressed: () {},
       child: const Text('LUMA'),
     );
