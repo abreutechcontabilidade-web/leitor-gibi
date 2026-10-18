@@ -1,9 +1,1 @@
-# Flutter
-.dart_tool/
-.packages
-build/
-.flutter-plugins
-
-# Backups do Motor (v2.3)
-*.bak
-*.bak.*
+﻿*.bak*
