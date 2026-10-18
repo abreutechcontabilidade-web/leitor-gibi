@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+final String lumaStatus = 'v2.3 Ativo';
 import 'package:provider/provider.dart';
 
 class LumaStatus extends ChangeNotifier {
