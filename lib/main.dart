@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+const String lumaTituloBoasVindas = 'Bem-vindo ao Leitor de Gibi';
 const String lumaTitulo = 'Bem-vindo ao Leitor de Gibi';
 final String lumaStatus = 'v2.3 Ativo';
 import 'package:provider/provider.dart';
