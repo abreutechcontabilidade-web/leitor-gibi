@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'widgets/luma_botao.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,10 +33,12 @@ class MyHomePage extends StatelessWidget {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
       body: const Center(
-        child: Text(
-          'O Imperio esta vivo.',
-          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-        ),
+        child: LumaBotao(
+            texto: 'O Imperio esta vivo.',
+            onPressed: () {
+              print('Botao clicado!');
+            },
+          ),
       ),
     );
   }
