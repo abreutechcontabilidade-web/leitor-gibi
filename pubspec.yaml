@@ -7,6 +7,7 @@ environment:
   sdk: '>=3.0.0 <4.0.0'
 
 dependencies:
+  path_provider: ^2.1.0
   onnxruntime: ^1.16.0
   flutter_tts_improved: ^3.0.0
   flureadium: ^0.14.0
@@ -17,6 +18,7 @@ dependencies:
   flutter_tts: ^4.0.2
 
 dev_dependencies:
+  path_provider: ^2.1.0
   onnxruntime: ^1.16.0
   flutter_tts_improved: ^3.0.0
   flureadium: ^0.14.0
@@ -26,3 +28,7 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+flutter:
+  assets:
+    - assets/models/
