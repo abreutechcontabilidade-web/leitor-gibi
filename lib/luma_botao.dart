@@ -14,7 +14,7 @@ class LumaBotao extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        primary: Colors.green,
+        backgroundColor: Colors.green,
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
         textStyle: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
       ),

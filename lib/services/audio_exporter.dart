@@ -1,4 +1,4 @@
-import 'package:flutter_tts_improved/flutter_tts_improved.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 import 'package:path_provider/path_provider.dart';
 
 class AudioExporter {
@@ -7,7 +7,7 @@ class AudioExporter {
     required double rate, required String fileName,
   }) async {
     try {
-      final tts = FlutterTtsImproved();
+      final tts = FlutterTts();
       await tts.setLanguage("pt-BR");
       await tts.setPitch(pitch);
       await tts.setSpeechRate(rate);

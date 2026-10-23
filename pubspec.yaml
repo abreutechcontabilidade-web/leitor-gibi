@@ -1,5 +1,5 @@
 name: leitor_de_gibi
-description: Aplicativo de leitura de gibi para idosos com Text-to-Speech em portuguÃªs.
+description: A new Flutter project.
 publish_to: 'none'
 version: 1.0.0+1
 
@@ -7,28 +7,28 @@ environment:
   sdk: '>=3.0.0 <4.0.0'
 
 dependencies:
-  image_picker: ^1.0.4
-  image: ^4.1.3
-  path_provider: ^2.1.0
-  onnxruntime: ^1.16.0
-  flutter_tts_improved: ^3.0.0
-  flureadium: ^0.14.0
   flutter:
     sdk: flutter
-
-  # Text-to-Speech com suporte a pt-BR, Android e Flutter Web
+  cupertino_icons: ^1.0.2
+  file_picker: ^11.0.3
+  syncfusion_flutter_pdfviewer: ^26.2.14
+  syncfusion_flutter_pdf: ^26.2.14
+  speech_to_text: ^7.4.0
   flutter_tts: ^4.0.2
+  shared_preferences: ^2.5.3
+  image: ^4.5.4
+  flutter_page_curl: ^0.1.0
+  http: ^1.6.0
+  path_provider: ^2.1.3
+  pdfx: ^2.10.0
+  onnxruntime: ^1.4.1
 
 dev_dependencies:
-  path_provider: ^2.1.0
-  onnxruntime: ^1.16.0
-  flutter_tts_improved: ^3.0.0
-  flureadium: ^0.14.0
   flutter_test:
     sdk: flutter
-  flutter_lints: ^4.0.0
+  flutter_lints: ^2.0.0
 
 flutter:
+  uses-material-design: true
   assets:
     - assets/models/
-  uses-material-design: true

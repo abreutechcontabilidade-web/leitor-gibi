@@ -1,69 +1,60 @@
 import 'package:flutter/material.dart';
-import 'widgets/gibi_card.dart';
-import 'widgets/luma_botao.dart';
+import 'pages/comic_reader_page.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const LeitorGibiApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class LeitorGibiApp extends StatelessWidget {
+  const LeitorGibiApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Leitor Gibi SOTA',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
-        useMaterial3: true,
-      ),
-      home: const EstanteDeGibis(),
+      theme: ThemeData(primarySwatch: Colors.green),
+      home: const HomePage(),
     );
   }
 }
 
-class EstanteDeGibis extends StatelessWidget {
-  const EstanteDeGibis({super.key});
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final List<Map<String, String>> gibis = [
-      {'titulo': 'Turma da Monica', 'img': 'https://picsum.photos/200/300?1'},
-      {'titulo': 'Mickey Mouse', 'img': 'https://picsum.photos/200/300?2'},
-      {'titulo': 'Homem Aranha', 'img': 'https://picsum.photos/200/300?3'},
-      {'titulo': 'Batman', 'img': 'https://picsum.photos/200/300?4'},
-    ];
-
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Leitor Gibi SOTA', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+        title: const Text('Prateleira SOTA'),
         backgroundColor: Colors.green.shade200,
       ),
-      body: GridView.builder(
-        padding: const EdgeInsets.all(16),
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          crossAxisSpacing: 16,
-          mainAxisSpacing: 16,
-          childAspectRatio: 0.7,
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Icon(Icons.auto_stories, size: 100, color: Colors.green),
+            const SizedBox(height: 20),
+            const Text('Bem-vindo ao Leitor de Gibi', style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+            const SizedBox(height: 40),
+            ElevatedButton.icon(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.green,
+                foregroundColor: Colors.white,
+                minimumSize: const Size(250, 60),
+              ),
+              icon: const Icon(Icons.play_arrow, size: 30),
+              label: const Text('ABRIR LEITOR E OUVIR', style: TextStyle(fontSize: 18)),
+              onPressed: () {
+                // Rota para a nossa tela com Multi-Vozes!
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ComicReaderPage()),
+                );
+              },
+            ),
+          ],
         ),
-        itemCount: gibis.length,
-        itemBuilder: (context, index) {
-          return GibiCard(
-            titulo: gibis[index]['titulo']!,
-            imagemUrl: gibis[index]['img']!,
-            onTap: () {
-              print('Abrindo: \${gibis[index]['titulo']}');
-            },
-          );
-        },
-      ),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {},
-        icon: const Icon(Icons.play_arrow),
-        label: const Text('LER', style: TextStyle(fontSize: 20)),
-        backgroundColor: Colors.green,
       ),
     );
   }

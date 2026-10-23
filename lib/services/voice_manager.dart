@@ -1,20 +1,21 @@
-class VoiceProfile {
-  final String name;
-  final double pitch;
-  final double rate;
-  const VoiceProfile(this.name, this.pitch, this.rate);
-}
+import 'stilb_emotion.dart';
 
 class VoiceManager {
-  static const Map<String, VoiceProfile> _m = {
-    'red': VoiceProfile('Monica', 1.5, 0.55),
-    'blue': VoiceProfile('Cebolinha', 0.8, 0.40),
-    'green': VoiceProfile('Magali', 1.2, 0.50),
-    'white': VoiceProfile('Narrador', 1.0, 0.45),
-    'black': VoiceProfile('Narrador', 1.0, 0.45),
-    'mixed': VoiceProfile('Generico', 1.1, 0.50),
-    'unknown': VoiceProfile('Generico', 1.1, 0.50),
-  };
+  static VoiceProfile profileFor(String colorName) {
+    // Perfis base por personagem (pode ser expandido)
+    if (colorName == 'red') return VoiceProfile(1.0, 0.5);
+    if (colorName == 'blue') return VoiceProfile(0.8, 0.4);
+    return VoiceProfile(1.0, 0.5);
+  }
 
-  static VoiceProfile profileFor(String c) => _m[c] ?? _m['unknown']!;
+  // NOVO: Lê o texto e aplica a emoção STILB por cima do perfil do personagem
+  static VoiceProfile emotionalProfileFor(String colorName, String text) {
+    VoiceProfile base = profileFor(colorName);
+    VoiceProfile emotion = StilbEmotionEngine.analyze(text);
+    
+    return VoiceProfile(
+      (base.pitch + (emotion.pitch - 1.0)).clamp(0.5, 2.0), 
+      (base.rate + (emotion.rate - 0.5)).clamp(0.1, 1.0)
+    );
+  }
 }
